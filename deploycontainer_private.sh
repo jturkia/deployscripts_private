@@ -348,13 +348,13 @@ clean() {
                         fi
                         sleep 2
                     fi
-                    ice_retry ip bind ${FLOATING_IP} ${CONTAINER_NAME}_${BUILD_NUMBER} 2> /dev/null
-                    RESULT=$?
-                    if [ $RESULT -ne 0 ]; then
-                        log_and_echo "$WARN" "'$IC_COMMAND ip bind ${FLOATING_IP} ${CONTAINER_NAME}_${BUILD_NUMBER}' command failed with return code ${RESULT}"
-                        log_and_echo "$WARN" "Cleaning up previous deployments is not completed"
-                        return 0
-                    fi
+                    #ice_retry ip bind ${FLOATING_IP} ${CONTAINER_NAME}_${BUILD_NUMBER} 2> /dev/null
+                    #RESULT=$?
+                    #if [ $RESULT -ne 0 ]; then
+                    #    log_and_echo "$WARN" "'$IC_COMMAND ip bind ${FLOATING_IP} ${CONTAINER_NAME}_${BUILD_NUMBER}' command failed with return code ${RESULT}"
+                    #    log_and_echo "$WARN" "Cleaning up previous deployments is not completed"
+                    #    return 0
+                    #fi
                 fi
             fi
         fi
